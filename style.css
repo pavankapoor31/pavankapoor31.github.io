@@ -1,0 +1,683 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Common styling */
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 3px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+section .title::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background: rgb(255, 255, 255);
+    font-size: 20px;
+    color: crimson;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.about,
+.skills,
+.project {
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-content,
+.skills .skills-content,
+.contact .contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* header */
+
+.menu>li {
+    display: inline-block;
+}
+
+.navbar {
+    /* background: crimson; */
+    position: fixed;
+    width: 100%;
+    padding: 30px 0;
+    font-family: 'Ubuntu', 'sans-serif';
+    transition: all 0.3s ease;
+    z-index: 998;
+    /* height: 5%; */
+}
+
+.navbar.sticky {
+    padding: 30px 0;
+    background: crimson;
+}
+
+.navbar.sticky .logo a span {
+    color: rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .menu li a:hover {
+    color: black;
+}
+
+.menu li a {
+    color: white;
+    font-size: 20px;
+    list-style: none;
+    margin-left: 25px;
+    /* display: inline-block; */
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: crimson;
+}
+
+.logo a {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.logo a span {
+    color: crimson;
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0px 80px;
+    margin: auto;
+}
+
+.menu-btn {
+    margin-left: 15px;
+    color: white;
+    font-size: 23px;
+    /* display: inline; */
+    cursor: pointer;
+    display: none;
+}
+
+
+/* Home section styling */
+
+.home {
+    display: flex;
+    /* max-width: 1300px; */
+    clear: both;
+    height: 100vh;
+    background: url(images/banner-dark.png) no-repeat center;
+    /* background-size: 100%; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    min-height: 500px;
+}
+
+.home .max-width {
+    margin: auto 0 auto 40px;
+}
+
+.home .max-width {
+    margin-left: 0;
+    padding: 0 80px;
+}
+
+.home .home-content a {
+    font-size: 25px;
+    padding: 12px 25px;
+    color: white;
+    background: crimson;
+    margin-top: 15px;
+    border: 2px solid rgb(227, 29, 68);
+    border-radius: 6px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+    color: crimson;
+    background: black;
+}
+
+.home .home-content .text-1 {
+    font-size: 27px;
+}
+
+.home .home-content .text-2 {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+    color: crimson;
+    font-weight: 500;
+}
+
+
+/* About section styling */
+
+section {
+    padding: 100px 0;
+}
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    /* height: 100vh; */
+}
+
+.about .title {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+.about .title::after {
+    content: "Who am I";
+    background: #fff;
+    color: crimson;
+}
+
+.about .about-content .left img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.about .about-content .left {
+    width: 45%;
+}
+
+.about .about-content .right {
+    width: 55%;
+}
+
+.about .about-content .right .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.about .about-content .right .text span {
+    color: crimson;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.about .right a {
+    background: crimson;
+    color: #fff;
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+
+.about .right a:hover {
+    background-color: #111;
+    color: crimson;
+}
+
+
+/* Projects section */
+
+.project {
+    background: rgb(0, 0, 0);
+}
+
+.project .title {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.project .title::before {
+    content: "";
+    background-color: rgb(255, 255, 255);
+    color: white;
+}
+
+.project .title::after {
+    content: "Work I've done";
+    background: black;
+    color: crimson;
+}
+
+.project-list h3 {
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.project .card {
+    width: calc(33% - 20px);
+    height: 365px;
+    background-color: rgb(41, 39, 39);
+    border-radius: 6px;
+    box-shadow: rgb(43, 41, 41);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project .card:hover {
+    background-color: crimson;
+    transform: scale(1.05);
+}
+
+.project .card:hover i {
+    color: #fff;
+}
+
+.project .card a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.project-para {
+    color: White;
+    padding: 15px;
+    text-align: justify;
+    vertical-align: baseline;
+    padding-top: 85px;
+}
+
+.project .fa {
+    font-size: 5em;
+    color: crimson;
+    text-align: center;
+    margin: auto;
+    width: 300px;
+    transition: color 0.3s ease;
+}
+
+.project .project-list {
+    display: flex;
+}
+
+
+/* Skills section styling */
+
+.skills {
+    background: white;
+}
+
+.skills .title {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.skills .title::before {
+    content: "";
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.skills .title::after {
+    content: "What I've leant";
+    background: rgb(255, 255, 255);
+    color: crimson;
+}
+
+.skills .skills-content .column {
+    width: calc(50% - 30px);
+}
+
+.skills .skills-content .left .text {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.skills .skills-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.skills .skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+
+.skills .skills-content .right .html::before {
+    width: 90%;
+}
+
+.skills .skills-content .right .css::before {
+    width: 81%;
+}
+
+.skills .skills-content .right .cpp::before {
+    width: 83%;
+}
+
+.skills .skills-content .right .js::before {
+    width: 80%;
+}
+
+.skills .skills-content .right .mysql::before {
+    width: 70%;
+}
+
+
+/* Contact Section styling */
+
+.contact .title {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    color: #000;
+    padding-bottom: 20px;
+}
+
+.contact .title::before {
+    content: "";
+    background-color: black;
+}
+
+.contact .title::after {
+    content: "Let's connect";
+    background: white;
+    color: crimson;
+}
+
+.contact .contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact .contact-content .column {
+    width: calc(50% - 30px);
+}
+
+.contact .row a {
+    color: black;
+}
+
+.contact .contact-content .left p {
+    text-align: justify;
+}
+
+.contact .contact-content .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact .contact-content .left .icons {
+    margin: 10px 0;
+}
+
+.contact .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .row .info {
+    margin-left: 30px;
+}
+
+.contact .contact-content .icons i {
+    font-size: 35px;
+    color: crimson;
+    width: 35px;
+}
+
+.contact .contact-content .info .head {
+    font-weight: 600;
+}
+
+.contact .contact-content .info .sub-title {
+    color: #333;
+}
+
+.contact .contact-content .right {
+    width: 27%;
+}
+
+.contact .contact-content .right img {
+    height: 320px;
+    width: 280px;
+}
+
+
+/* Responsive media */
+
+@media(max-width:1300px) {
+    .home .max-width {
+        margin-left: 0;
+    }
+}
+
+@media(max-width:1105px) {
+    .about .about-content .left img {
+        width: 350px;
+        height: 350px;
+        /* object-fit: cover; */
+        border-radius: 6px;
+    }
+    .project-para {
+        padding-top: 55px;
+        padding-bottom: 5px;
+    }
+}
+
+@media(max-width:990px) {
+    .home .max-width {
+        margin-left: 0;
+        padding: 0 50px;
+    }
+    .menu-btn {
+        display: block;
+        position: fixed;
+        /* top: 10px; */
+        right: 3vw;
+        z-index: 999;
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0px;
+        font-size: 30px;
+    }
+    .menu>li {
+        display: block;
+    }
+    .home-content {
+        max-width: 1400px;
+    }
+    .home .home-content .text-2 {
+        font-size: 65px;
+        font-weight: 300;
+    }
+    .home .home-content .text-3 {
+        font-size: 35px;
+    }
+    .home .home-content a {
+        font-size: 18px;
+        padding: 10px 19px;
+    }
+    .max-width {
+        padding: 0 50px;
+        max-width: 800px;
+    }
+    .about .about-content .column {
+        width: 50%;
+    }
+    .about .about-content .left img {
+        width: 250px;
+        height: 250px;
+        /* object-fit: cover; */
+        border-radius: 6px;
+    }
+    .about .about-content .left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right {
+        flex: 100%;
+    }
+    .project .project-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project .project-list .card {
+        width: fit-content;
+        padding: 10px;
+        margin: 10px;
+    }
+    .project-para {
+        padding-top: 88px;
+    }
+}
+
+@media(max-width:690px) {
+    .skills .skills-content .column {
+        width: 100%;
+        margin-top: 25px;
+    }
+    .contact .contact-content .column {
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+
+@media(max-width:580px) {
+    .max-width {
+        padding: 0 50px;
+    }
+    .home .home-content .text-1 {
+        font-size: 1rem;
+    }
+    .home .home-content .text-2 {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+    .home .home-content .text-3 {
+        font-size: 1rem;
+    }
+    .home .home-content a {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+    .project .title::after {
+        content: "Work I've done";
+        font-size: 15px;
+    }
+    .skills .title::after {
+        content: "Work I've done";
+        font-size: 15px;
+    }
+    .project-para {
+        padding-top: 48px;
+    }
+    section .title::after {
+        content: "";
+        font-size: 18px;
+    }
+}
