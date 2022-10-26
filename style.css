@@ -243,9 +243,13 @@ section {
     font-weight: 600;
     margin-bottom: 10px;
 }
-
-.about .about-content .right .text span {
+.about .about-content .right .text span{
     color: crimson;
+}
+@media  (max-width : 400px) {
+    .type-2-about{
+        display: block;
+    }
 }
 
 .about .about-content .right p {
