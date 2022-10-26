@@ -109,6 +109,7 @@ var mouse = {
 window.addEventListener('mousemove', (e) => {
   mouse.x = e.x;
   mouse.y = e.y;
+  console.log(e);
 });
 window.addEventListener('resize', (e) => {
   canvas.width = window.innerWidth;
