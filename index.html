@@ -1,153 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pavan Kapoor</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css?v=8">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css?v=8" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-    </style>
-</head>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+      canvas {
+        border: 1px solid black;
+        background-color: rgb(0, 0, 0);
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 100vw !important;
 
-<body>
+        /* background-color: transparent; */
+      }
+    </style>
+  </head>
+
+  <body>
     <nav class="navbar">
-        <div class="max-width">
-            <div class="logo">
-                <a href="#">Portfo<span>lio.</span> </a>
-            </div>
-            <ul class="menu">
-                <li><a href="">Home</a></li>
-                <li><a href="#about" onclick="toggleClass()">About</a></li>
-                <li><a href="#projects" onclick="toggleClass()">Projects</a></li>
-                <li><a href="#skills" onclick="toggleClass()">Skills</a></li>
-                <li><a href="#contact" onclick="toggleClass()">Contact</a></li>
-            </ul>
-            <div class="menu-btn">
-                <i class="fa fa-bars"></i>
-            </div>
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">Portfo<span>lio.</span> </a>
         </div>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about" onclick="toggleClass()">About</a></li>
+          <li><a href="#projects" onclick="toggleClass()">Projects</a></li>
+          <li><a href="#skills" onclick="toggleClass()">Skills</a></li>
+          <li><a href="#contact" onclick="toggleClass()">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
     </nav>
     <!-- Home Section -->
-    <section class="home">
-        <div class="max-width">
-            <div class="home-content">
-                <div class="text-1">Hello, My name is </div>
-                <div class="text-2">Pavan Kapoor</div>
-                <div class="text-3">And I'm a
-                    <span class="auto-type"></span>
-                    <!-- <span> Web Developer</span> -->
-                </div>
-                <a href="#about" class="hireBtn">Know more</a>
-            </div>
+    <section class="home" id="home">
+      <canvas id="canvas"> </canvas>
+      <div class="max-width">
+        <div class="home-content">
+          <div class="text-1">Hello, My name is</div>
+          <div class="text-2">Pavan Kapoor</div>
+          <div class="text-3">
+            And I'm a
+            <span class="auto-type"></span>
+            <!-- <span> Web Developer</span> -->
+          </div>
+          <a href="#about" class="hireBtn">Know more</a>
         </div>
+      </div>
     </section>
     <!-- Abour Section -->
     <section class="about" id="about">
-        <div class="max-width">
-            <h2 class="title">About me</h2>
-            <div class="about-content">
-                <div class="column left">
-                    <img src="images/profile-2.gif" alt="">
-                </div>
-                <div class="column right">
-                    <div class="text">I'm Pavan and I'm a <span class="auto-type-2"></span></div>
-                    <p>I'm an enthusiastic and goal-oriented person with an ability to work both in a team as well as individually. I am always striving to be better. Currently pursuing a bachelor's degree in Information science / IT Engineering I like to
-                        build tech and am always up for a challenge.
-                    </p>
-                    <a href="Pavan_Kapoor_Resume.pdf">Download resume</a>
-                </div>
+      <div class="max-width">
+        <h2 class="title">About me</h2>
+        <div class="about-content">
+          <div class="column left">
+            <img src="images/profile-2.gif" alt="" />
+          </div>
+          <div class="column right">
+            <div class="text">
+              I'm Pavan and I'm a <span class="auto-type-2"></span>
             </div>
+            <p>
+              I'm an enthusiastic and goal-oriented person with an ability to
+              work both in a team as well as individually. I am always striving
+              to be better. Currently pursuing a bachelor's degree in
+              Information science / IT Engineering I like to build tech and am
+              always up for a challenge.
+            </p>
+            <a href="Pavan_Kapoor_Resume.pdf">Download resume</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <section class="project" id="projects">
-        <div class="max-width">
-            <h2 class="title">Projects</h2>
-            <div class="project-content">
-                <div class="project-list">
-                    <div class="project-1 card">
-                        <a href="https://www.pavankapoor.ml/real/" target="_blank">
-                            <h3 class="h3">Property Paradise</h3>
-                            <center> <i class="fa fa-home"></i> </center>
-                            <p class="project-para">End-to-end property management system. Sellers can upload property details and buyers can see the ads. Uses MySQL, PHP along with HTML CSS and JS for front end.
-                            </p>
-                        </a>
-                    </div>
-                    <div class="project-2 card">
-                        <a href="https://pavankapoor.ml/digitalClock/" target="_blank">
-                            <h3 class="h3">Digital Clock</h3>
-                            <center> <i class="fa fa-clock-o"></i> </center>
-                            <p class="project-para">
-                                A digital clock using html css and javascript. Uses the date() function in JS to fetch live time.Support to multiple timezones is added so user can see time of different countries.
-                            </p>
-                        </a>
-                    </div>
-                    <div class="project-3 card">
-                        <a href="https://pavankapoor.ml/guess/" target="_blank">
-                            <h3 class="h3">Guessing game</h3>
-                            <center> <i class="fa fa-sort-numeric-asc"></i> </center>
-                            <p class="project-para">Created a guessing game using HTML CSS and JavaScript. A secret number is generated between 1-20 and user gets 10 attempts to guess the secret number.
-                            </p>
-                        </a>
-                    </div>
-                </div>
+      <div class="max-width">
+        <h2 class="title">Projects</h2>
+        <div class="project-content">
+          <div class="project-list">
+            <div class="project-1 card">
+              <a href="https://www.pavankapoor.ml/real/" target="_blank">
+                <h3 class="h3">Property Paradise</h3>
+                <center><i class="fa fa-home"></i></center>
+                <p class="project-para">
+                  End-to-end property management system. Sellers can upload
+                  property details and buyers can see the ads. Uses MySQL, PHP
+                  along with HTML CSS and JS for front end.
+                </p>
+              </a>
             </div>
+            <div class="project-2 card">
+              <a href="https://pavankapoor.ml/digitalClock/" target="_blank">
+                <h3 class="h3">Digital Clock</h3>
+                <center><i class="fa fa-clock-o"></i></center>
+                <p class="project-para">
+                  A digital clock using html css and javascript. Uses the date()
+                  function in JS to fetch live time.Support to multiple
+                  timezones is added so user can see time of different
+                  countries.
+                </p>
+              </a>
+            </div>
+            <div class="project-3 card">
+              <a href="https://pavankapoor.ml/guess/" target="_blank">
+                <h3 class="h3">Guessing game</h3>
+                <center><i class="fa fa-sort-numeric-asc"></i></center>
+                <p class="project-para">
+                  Created a guessing game using HTML CSS and JavaScript. A
+                  secret number is generated between 1-20 and user gets 10
+                  attempts to guess the secret number.
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <section class="skills" id="skills">
-        <div class="max-width">
-            <h2 class="title">Skills</h2>
-            <div class="skills-content">
-                <div class="column left">
-                    <div class="text head">My skills and experiences</div>
-                    <p class="text-justify">
-                        I have gained knowledge of C++ in my engineering degree and I am learning Web Development, data structures whilst improving my problem-solving skills.
-                    </p>
-                </div>
-                <div class="column right">
-                    <div class="bars">
-                        <div class="info">
-                            <span>HTML</span>
-                            <!-- <span>x%</span> -->
-                        </div>
-                        <div class="line html"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>CSS</span>
-                            <!-- <span>x%</span> -->
-                        </div>
-                        <div class="line css"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>JavaScript</span>
-                            <!-- <span>x%</span> -->
-                        </div>
-                        <div class="line js"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>MySQL</span>
-                            <!-- <span>x%</span> -->
-                        </div>
-                        <div class="line mysql"></div>
-                    </div>
-                    <div class="bars">
-                        <div class="info">
-                            <span>C++</span>
-                            <!-- <span>x%</span> -->
-                        </div>
-                        <div class="line cpp"></div>
-                    </div>
-                </div>
+      <div class="max-width">
+        <h2 class="title">Skills</h2>
+        <div class="skills-content">
+          <div class="column left">
+            <div class="text head">My skills and experiences</div>
+            <p class="text-justify">
+              I have gained knowledge of C++ in my engineering degree and I am
+              learning Web Development, data structures whilst improving my
+              problem-solving skills.
+            </p>
+          </div>
+          <div class="column right">
+            <div class="bars">
+              <div class="info">
+                <span>HTML</span>
+                <!-- <span>x%</span> -->
+              </div>
+              <div class="line html"></div>
             </div>
+            <div class="bars">
+              <div class="info">
+                <span>CSS</span>
+                <!-- <span>x%</span> -->
+              </div>
+              <div class="line css"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>JavaScript</span>
+                <!-- <span>x%</span> -->
+              </div>
+              <div class="line js"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>MySQL</span>
+                <!-- <span>x%</span> -->
+              </div>
+              <div class="line mysql"></div>
+            </div>
+            <div class="bars">
+              <div class="info">
+                <span>C++</span>
+                <!-- <span>x%</span> -->
+              </div>
+              <div class="line cpp"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
     <!-- <section class="contact" id="contact">
         <div class="max-width">
@@ -156,80 +188,76 @@
     </section> -->
     <!-- contact section start -->
     <section class="contact" id="contact">
-        <div class="max-width">
-            <h2 class="title ">Contact me</h2>
-            <div class="contact-content">
-                <div class="column left">
-                    <div class="text">Get in Touch</div>
-                    <p>Would like to get in touch to make amazing tech together? You can leave me an email or catch me on LinkedIn.</p>
-                    <div class="icons">
-                        <div class="row">
-                            <i class="fa fa-user"></i>
-                            <div class="info">
-                                <div class="head">Name</div>
-                                <div class="sub-title">Pavan Kapoor</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fa fa-envelope"></i>
-                            <div class="info">
-                                <div class="head">Email</div>
-                                <div class="sub-title">pavankapoor31@gmail.com</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <i class="fa fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/pavankapoor31/" target="_blank">
-                                <div class="info">
-                                    <div class="head">LinkedIn</div>
-                                    <div class="sub-title">pavankapoor31</div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <i class="fa fa-github"></i>
-                            <a href="https://github.com/pavankapoor31" target="_blank">
-                                <div class="info">
-                                    <div class="head">GitHub</div>
-                                    <div class="sub-title">pavankapoor31</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+      <div class="max-width">
+        <h2 class="title">Contact me</h2>
+        <div class="contact-content">
+          <div class="column left">
+            <div class="text">Get in Touch</div>
+            <p>
+              Would like to get in touch to make amazing tech together? You can
+              leave me an email or catch me on LinkedIn.
+            </p>
+            <div class="icons">
+              <div class="row">
+                <i class="fa fa-user"></i>
+                <div class="info">
+                  <div class="head">Name</div>
+                  <div class="sub-title">Pavan Kapoor</div>
                 </div>
-                <div class="column right">
-                    <img src="images/profile-1.jpg" alt="">
+              </div>
+              <div class="row">
+                <i class="fa fa-envelope"></i>
+                <div class="info">
+                  <div class="head">Email</div>
+                  <div class="sub-title">pavankapoor31@gmail.com</div>
                 </div>
+              </div>
+              <div class="row">
+                <i class="fa fa-linkedin"></i>
+                <a
+                  href="https://www.linkedin.com/in/pavankapoor31/"
+                  target="_blank"
+                >
+                  <div class="info">
+                    <div class="head">LinkedIn</div>
+                    <div class="sub-title">pavankapoor31</div>
+                  </div>
+                </a>
+              </div>
+              <div class="row">
+                <i class="fa fa-github"></i>
+                <a href="https://github.com/pavankapoor31" target="_blank">
+                  <div class="info">
+                    <div class="head">GitHub</div>
+                    <div class="sub-title">pavankapoor31</div>
+                  </div>
+                </a>
+              </div>
             </div>
+          </div>
+          <div class="column right">
+            <img src="images/profile-1.jpg" alt="" />
+          </div>
         </div>
+      </div>
     </section>
-
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
     <script>
-        var typed = new Typed(".auto-type", {
-            strings: [
-                "Web Developer",
-                "Programmer",
-                "Coder"
-            ],
-            typeSpeed: 150,
-            backSpeed: 70,
-            loop: true
-        });
-        var typed = new Typed(".auto-type-2", {
-            strings: [
-                "Web Developer",
-                "Programmer",
-                "Coder",
-                "Tech enthusiast"
-            ],
-            typeSpeed: 150,
-            backSpeed: 70,
-            loop: true
-        })
+      var typed = new Typed('.auto-type', {
+        strings: ['Web Developer', 'Programmer', 'Coder'],
+        typeSpeed: 150,
+        backSpeed: 70,
+        loop: true,
+      });
+      var typed = new Typed('.auto-type-2', {
+        strings: ['Web Developer', 'Programmer', 'Coder', 'Tech enthusiast'],
+        typeSpeed: 150,
+        backSpeed: 70,
+        loop: true,
+      });
     </script>
-</body>
-
+    <script src="canvas.js"></script>
+  </body>
 </html>

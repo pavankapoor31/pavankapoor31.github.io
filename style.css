@@ -139,7 +139,7 @@ section .title::after {
     /* max-width: 1300px; */
     clear: both;
     height: 100vh;
-    background: url(images/banner-dark.png) no-repeat center;
+    /* background: url(images/banner-dark.png) no-repeat center; */
     /* background-size: 100%; */
     background-size: cover;
     background-repeat: no-repeat;
@@ -190,7 +190,8 @@ section .title::after {
 }
 
 .home .home-content .text-3 span {
-    color: crimson;
+    color: rgba(255, 255, 255);
+    text-shadow: 1px 0px rgb(217, 42, 42);
     font-weight: 500;
 }
 
