@@ -3,6 +3,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const MAXRADIUS = 50;
 const distanceFromMouse = 40;
+let numOfCircles = 1000;
 var c = canvas.getContext('2d'); //context
 
 // Circle class to create circles
@@ -17,7 +18,9 @@ class Circle {
     this.colors = [
       '#BD2A2E',
       '#3B3936',
-      '#B2BEBF',
+      '#330000',
+      '#1a0000',
+      // '#B2BEBF',
       '#889C9B',
       '#486966',
       '#520120',
@@ -25,13 +28,15 @@ class Circle {
     ];
     this.randomColor =
       this.colors[Math.floor(Math.random() * this.colors.length - 1)];
-    // Print the circle on screen
+    // Function to Print the circle on screen
     this.draw = function () {
       c.beginPath();
       c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
       c.fillStyle = this.randomColor;
       c.fill();
+
     };
+
     // Update circle when it touches boundary or mouse
     this.update = () => {
       if (this.y >= window.innerHeight - this.radius * 2)
@@ -53,7 +58,7 @@ class Circle {
         if (this.radius <= MAXRADIUS) this.radius += 2;
       } else if (this.radius > this.minradius && this.radius > 2)
         this.radius -= 1;
-      this.draw();
+      this.draw();  
     };
   }
 }
@@ -67,8 +72,8 @@ function generateRandomNumber(max) {
 // Creating an array of circles objects
 let circleArray = [];
 let numOfBalls = 800;
-if (window.innerWidth < 800) numOfBalls = window.innerWidth;
-for (var i = 0; i < numOfBalls; i++) {
+if (window.innerWidth < 800) numOfCircles = window.innerWidth;
+for (var i = 0; i < numOfCircles; i++) {
   let radius = generateRandomNumber(9);
   let x = generateRandomNumber(window.innerWidth) - 2 * radius + radius;
   let y = generateRandomNumber(window.innerHeight);
@@ -79,7 +84,7 @@ for (var i = 0; i < numOfBalls; i++) {
 
 function init() {
   circleArray = [];
-  for (var i = 0; i < 1200; i++) {
+  for (var i = 0; i < numOfCircles; i++) {
     let radius = generateRandomNumber(9);
     let x = generateRandomNumber(window.innerWidth) - 2 * radius + radius;
     let y = generateRandomNumber(window.innerHeight);
@@ -97,7 +102,6 @@ function animate() {
   for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].update();
   }
-  //   cir.update();
 }
 
 // Mouse Coordinates
@@ -109,11 +113,14 @@ var mouse = {
 window.addEventListener('mousemove', (e) => {
   mouse.x = e.x;
   mouse.y = e.y;
-  console.log(e);
 });
 window.addEventListener('resize', (e) => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  if (window.innerWidth < 800) {
+    numOfCircles = window.innerWidth;
+
+  }
   init();
 });
 animate();

@@ -191,8 +191,9 @@ section .title::after {
 
 .home .home-content .text-3 span {
     color: rgba(255, 255, 255);
-    text-shadow: 1px 0px rgb(217, 42, 42);
-    font-weight: 500;
+    text-shadow: 1px 0px rgb(255, 255, 255);
+    font-weight: 600;
+    background: #000;
 }
 
 
