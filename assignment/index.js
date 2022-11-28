@@ -106,7 +106,7 @@ window.addEventListener("load", function () {
     canvas3.width = phone.width - 5;
     canvas3.height = phone.height;
     setInterval(function () {
-      x = x + dx;
+     
       canvasImage.src = data[imageCounter].pngUrl;
       ctx.beginPath();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -120,7 +120,7 @@ window.addEventListener("load", function () {
           item.color = "#1D192B";
         }
       });
-      ctx2.translate(dx, 0);
+    
       ctx2.clearRect(0, 0, canvas.width, canvas.height);
       ctx3.clearRect(0, 0, canvas.width, canvas.height);
       paintSquaresAndCircles(ctx);
@@ -128,9 +128,10 @@ window.addEventListener("load", function () {
       ctx3.drawImage(phone, 0, 0, phone.width, phone.height);
       let height = canvasImage.height / 4 + 10;
       if (imageCounter == 2) height = 10;
+      let widthAdjuster =1;
       ctx3.drawImage(
         canvasImage,
-        x - canvasImage.width * 2,
+        x - canvasImage.width * widthAdjuster,
         height,
         canvasImage.width,
         canvasImage.height
@@ -141,7 +142,9 @@ window.addEventListener("load", function () {
         imageCounter++;
         if (imageCounter === 3) imageCounter = 0;
       }
-    }, 20);
+      x = x + dx;
+      ctx2.translate(dx, 0);
+    }, 30);
   }
   drawPhone();
   createMatrix();
