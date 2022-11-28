@@ -11,15 +11,16 @@ body,html{
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 100vh;
-
 }
 .canvas{
     margin: 0 auto;
-    width: 48rem;
-    overflow: hidden;
-    z-index: 99;
 }
 #canvas2{
+    position:  absolute;
+    top:0px;
+    left: 0px;
+    z-index: 9999;
+}
+#canvas3{
     z-index: 999;
 }
