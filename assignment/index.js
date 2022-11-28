@@ -118,19 +118,19 @@ window.addEventListener('load', function () {
                 ctx2.translate(dx, 0)
                 ctx2.clearRect(0, 0, canvas.width, canvas.height)
                 paintSquaresAndCircles(ctx)
-                // paintSquaresAndCircles(ctx2)
                 ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, 280, 596)
                 ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, 310, 275);
                 if (x >= canvas.width + 310) {
-                    ctx2. translate(-canvas.width-800,0)
+                    ctx2.translate(-x-150,0)
                     x = 0;
-                    // ctx.setTransform(1, 0, 0, 1, 0, 0);
+                    
+
                     imageCounter++;
-                    ctx2.
+                    
                     if (imageCounter === 3)
                         imageCounter = 0;
                 }
-            }, 10
+            }, 20
         )
     }
 
