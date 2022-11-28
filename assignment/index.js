@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
         let xCounter = 0;
         let yCounter = 55
         count = 0;
-        for (let i = 0; i < 18; i++) {
+        for (let i = 0; i < 32; i++) {
             count == 0 ? count = 1 : count = 0;
             xCounter = 0
             yCounter += 25;
@@ -76,15 +76,15 @@ window.addEventListener('load', function () {
             canvasObj.fill()
         });
     }
-    const f = t => {
-        const o = document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGMatrix()
-            , r = canvas.width / 1280
-            , p = o.scale(r)
-            , P = new Path2D(t.path);
-        t.svgPath.addPath(P, p)
+    const makeSVGmatrix = item => {
+        const matrixObj= document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGMatrix()
+            , point = canvas.width / 1280
+            , scalePoint = matrixObj.scale(point)
+            , path = new Path2D(item.path);
+        item.svgPath.addPath(path, scalePoint)
     }
         ;
-    data.forEach(t => f(t));
+    data.forEach(t => makeSVGmatrix(t));
     // Render the image left to right 
     function draw() {
         let x = 0;
@@ -118,15 +118,12 @@ window.addEventListener('load', function () {
                 ctx2.translate(dx, 0)
                 ctx2.clearRect(0, 0, canvas.width, canvas.height)
                 paintSquaresAndCircles(ctx)
-                ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, 280, 596)
-                ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, 310, 275);
+                ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, phone.width, phone.height)
+                ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, canvasImage.width, canvasImage.height);
                 if (x >= canvas.width + 310) {
-                    ctx2.translate(-x-150,0)
+                    ctx2.translate(-x,0)
                     x = 0;
-                    
-
                     imageCounter++;
-                    
                     if (imageCounter === 3)
                         imageCounter = 0;
                 }
