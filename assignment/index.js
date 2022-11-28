@@ -119,7 +119,7 @@ window.addEventListener('load', function () {
                 ctx2.clearRect(0, 0, canvas.width, canvas.height)
                 paintSquaresAndCircles(ctx)
                 ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, phone.width, phone.height)
-                ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, canvasImage.width, canvasImage.height);
+                ctx.drawImage(canvasImage, x, canvasImage.height/2-50, canvasImage.width, canvasImage.height);
                 if (x >= canvas.width + 310) {
                     ctx2.translate(-x,0)
                     x = 0;
