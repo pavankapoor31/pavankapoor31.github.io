@@ -107,10 +107,10 @@ window.addEventListener('load', function () {
                 matrix.forEach(
                     (item) => {
                         if (ctx2.isPointInPath(data[imageCounter].svgPath, item.x, item.y - 140)) {
-                            (item.color = 'red')
+                            (item.color = '#7F3CDD')
                         }
                         else{
-                            item.color="grey"
+                            item.color="#1D192B"
                         }
                     }
 
@@ -121,16 +121,16 @@ window.addEventListener('load', function () {
                 // paintSquaresAndCircles(ctx2)
                 ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, 280, 596)
                 ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, 310, 275);
-                if (x >= canvas.width + 260) {
+                if (x >= canvas.width + 310) {
                     ctx2. translate(-canvas.width-800,0)
                     x = 0;
                     // ctx.setTransform(1, 0, 0, 1, 0, 0);
                     imageCounter++;
                     ctx2.
-                    if (imageCounter == data.length)
+                    if (imageCounter === 3)
                         imageCounter = 0;
                 }
-            }, 40
+            }, 10
         )
     }
 
