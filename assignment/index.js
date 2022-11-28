@@ -3,6 +3,10 @@ window.addEventListener('load', function () {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    const canvas2 = document.querySelector("#canvas1");
+    const ctx2 = canvas2.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     const svgPaths = [
         // Power 
         "M84.4316 2.30791L153.95 0.28125C155.442 0.28137 156.98 0.28125 158.961 0.747426L187.047 6.93595C194.969 8.18237 200.792 14.9683 200.792 23.2409C200.792 26.9728 199.795 30.1207 198.499 33.411L157.18 135.728L233.781 133.669C235.014 133.669 236.917 133.759 237.806 133.829C238.565 133.889 239.664 134.132 240.363 134.32L268.574 140.468C270.207 140.863 272.715 141.632 274.109 142.175C279.086 144.101 282.598 148.937 282.598 154.597C282.598 155.354 282.534 156.097 282.413 156.82L282.419 156.819L282.386 156.976C282.333 157.266 282.272 157.553 282.201 157.837L282.188 157.896L281.99 158.905L281.956 159.064L281.893 159.297L281.815 159.563L281.738 159.806L281.602 160.188L281.447 160.678L281.215 161.385L281.026 161.918L280.653 162.765L280.328 163.516L279.839 164.562L279.297 165.585L278.924 166.243L278.531 166.946L120.162 356.717C110.524 368.732 95.7198 376.425 79.1172 376.425C78.4023 376.425 77.2891 376.367 76.082 376.128L47.6719 369.773C42.1289 368.909 37.8828 364.113 37.8828 358.327V356.624C37.9688 354.894 38.1641 353.956 38.5898 352.617L38.6562 352.406L71.6797 271.769C71.6858 271.768 71.6919 271.767 71.698 271.766L84.019 240.778L55.9809 241.453C53.8283 241.453 49.7549 241.706 46.9277 241.453C41.4007 240.958 37.2642 239.659 36.7068 239.554L15.2266 234.417L15.2344 234.378C6.91662 232.125 0.770716 224.591 0.620021 215.596L0.605469 215.592V212.278L0.677042 211.428L0.741845 210.828L0.798548 210.172L0.903853 209.516L1.02536 208.82L1.22787 207.888L1.59239 206.244L1.8678 204.94L43.7872 36.9695L44.9858 32.295L45.3013 31.1876L45.5756 30.3522L45.8623 29.467L46.1242 28.6441L46.4982 27.8336L46.8972 26.9733L47.2712 26.1878L47.558 25.5145L47.9321 24.729L48.2936 24.0433L48.6427 23.4448L48.9794 22.8713L49.3534 22.2479L49.7649 21.587L50.2013 20.9512L50.7748 20.1657L51.4606 19.1807L52.2585 18.0835L52.9568 17.2232L53.5303 16.5748L54.0789 15.9763L54.7272 15.2656L55.5127 14.4552L56.0239 13.944L56.5351 13.4702L57.1211 12.9341L57.6074 12.4852L59.362 11.1874C66.2142 5.66635 74.9185 2.35103 84.3963 2.31985L84.4316 2.30791Z",
@@ -43,7 +47,7 @@ window.addEventListener('load', function () {
             count == 0 ? count = 1 : count = 0;
             xCounter = 0
             yCounter += 25;
-            for (let j = 0; j < 50; j++) {
+            for (let j = 0; xCounter<canvas.width; j++) {
                 xCounter += 25;
                 if (xCounter >= canvas.width / 2 - 280 / 2 && xCounter <= canvas.width / 2 + 280 / 2) continue;
                 count++;
@@ -72,7 +76,15 @@ window.addEventListener('load', function () {
             canvasObj.fill()
         });
     }
-
+    const f = t => {
+        const o = document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGMatrix()
+            , r = canvas.width / 1280
+            , p = o.scale(r)
+            , P = new Path2D(t.path);
+        t.svgPath.addPath(P, p)
+    }
+        ;
+    data.forEach(t => f(t));
     // Render the image left to right 
     function draw() {
         let x = 0;
@@ -86,27 +98,35 @@ window.addEventListener('load', function () {
                 ctx.beginPath();
                 ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-                // Trying to give boxes in path the color 
                 // matrix.forEach(
-                //     item => {
-                //         if (ctx.isPointInPath(data[imageCounter].svgPath, item.x, item.y)) {
-                //             item.color = 'purple'
-                //             if (x - item.x <= 5 && x - item.x >= -5) {
-                //                 item.color = '#7F3CDD'
-                //             }
-                //             // else item.color = '#1D192B'
-                //         }
+                //     (item) => {
+                //         ctx.isPointInPath(data[imageCounter].svgPath, item.x+x, item.y-100) && (item.color='red')
                 //     }
                 // )
-                // matrix.forEach(
-                //     matrixItem => ctx.isPointInPath(data[imageCounter].svgPath, matrixItem.x, matrixItem.y) && (matrixItem.color = "#7F3CDD")
-                // )
+                ctx2.save();
+                matrix.forEach(
+                    (item) => {
+                        if (ctx2.isPointInPath(data[imageCounter].svgPath, item.x, item.y - 140)) {
+                            (item.color = 'red')
+                        }
+                        else{
+                            item.color="grey"
+                        }
+                    }
+
+                )
+                ctx2.translate(dx, 0)
+                ctx2.clearRect(0, 0, canvas.width, canvas.height)
                 paintSquaresAndCircles(ctx)
+                // paintSquaresAndCircles(ctx2)
                 ctx.drawImage(phone, canvas.width / 2 - 280 / 2, 0, 280, 596)
                 ctx.drawImage(canvasImage, x - 310, canvas.height / 2 - 170, 310, 275);
-                if (x >= canvas2.width + 260) {
+                if (x >= canvas.width + 260) {
+                    ctx2. translate(-canvas.width-800,0)
                     x = 0;
+                    // ctx.setTransform(1, 0, 0, 1, 0, 0);
                     imageCounter++;
+                    ctx2.
                     if (imageCounter == data.length)
                         imageCounter = 0;
                 }
