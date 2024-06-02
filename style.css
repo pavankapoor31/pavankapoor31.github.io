@@ -344,9 +344,14 @@ section {
     padding: 15px;
     text-align: justify;
     vertical-align: baseline;
-    padding-top: 85px;
+    padding-top: 50px;
 }
-
+.project-paras{
+    padding-top: 50px;
+}
+.project-paras-2{
+    padding-top: 54px;
+}
 .project .fa {
     font-size: 5em;
     color: crimson;
@@ -445,11 +450,15 @@ section {
 }
 
 .skills .skills-content .right .js::before {
-    width: 80%;
+    width: 90%;
 }
 
 .skills .skills-content .right .mysql::before {
     width: 70%;
+}
+
+.skills .skills-content .right .reactjs::before {
+    width: 90%;
 }
 
 
